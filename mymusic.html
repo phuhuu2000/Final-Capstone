@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c7b3f454c7.js" crossorigin="anonymous"></script>
+
+   <style type="text/css">
+		#titleFont{
+			background-color: #ff9933;
+		}
+		#listSongs{
+			text-align: center;
+		}
+		ul.double{
+			border-style: double;
+		}
+		ul.list-unstyled{
+			font-size: 150%;
+		}
+		a:link {
+		  color: red;
+		}
+
+		/* visited link */
+		a:visited {
+		  color: green;
+		}
+
+		/* mouse over link */
+		a:hover {
+		  color: hotpink;
+		}
+
+		/* selected link */
+		a:active {
+		  color: blue;
+		}
+		* {
+		  box-sizing: border-box;
+		}
+		@media screen and (max-width: 800px) {
+		  .column {
+		    -ms-flex: 50%;
+		    flex: 50%;
+		    max-width: 50%;
+		  }
+		}
+
+		/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+		@media screen and (max-width: 600px) {
+		  .column {
+		    -ms-flex: 100%;
+		    flex: 100%;
+		    max-width: 100%;
+		  }
+		}
+
+		body {
+		  margin: 0;
+		  font-family: Arial;
+		}
+
+		/* The grid: Four equal columns that floats next to each other */
+		.column {
+		  float: left;
+		  width: 25%;
+		  padding: 10px;
+		}
+
+		/* Style the images inside the grid */
+		.column img {
+		  opacity: 0.8; 
+		  cursor: pointer; 
+		}
+
+		.column img:hover {
+		  opacity: 1;
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+		  content: "";
+		  display: table;
+		  clear: both;
+		}
+
+		/* The expanding image container */
+		.container {
+		  position: relative;
+		  display: none;
+		}
+
+		/* Expanding image text */
+		#imgtext {
+		  position: absolute;
+		  bottom: 15px;
+		  left: 15px;
+		  color: white;
+		  font-size: 20px;
+		}
+
+		/* Closable button inside the expanded image */
+		.closebtn {
+		  position: absolute;
+		  top: 10px;
+		  right: 15px;
+		  color: white;
+		  font-size: 35px;
+		  cursor: pointer;
+		}
+		footer{
+			background-color: #ff9933;
+		}
+	</style>
+	
+	<script>
+			function myFunction(imgs) {
+  			var expandImg = document.getElementById("expandedImg");
+  			var imgText = document.getElementById("imgtext");
+  			expandImg.src = imgs.src;
+  			imgText.innerHTML = imgs.alt;
+  			expandImg.parentElement.style.display = "block";
+		}
+	</script>
+
+    <title>MyMusic</title>
+  </head>
+  <header>
+  	<div id="titleFont">
+  		<h1 class="fas fa-music">My Music Blog</h1>
+  	</div>	
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">MyMusic</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          CAGETORY
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">US-UK</a>
+          <a class="dropdown-item" href="#">K-POP</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">VIETNAM-MUSIC</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">ABOUT ME</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+  </header>
+  <body>
+  	<br>
+  	<p style="text-align: center">This is a blog about my favorite songs, hope you guys enjoy it XD</p>
+  	<div id="listSongs">
+  		<h1>10 songs you should listen to</h1>
+  		<ul class="double">
+  			<li><a href="https://www.youtube.com/watch?v=OPf0YbXqDm0" target="_blank""1">Uptown Funk ( Mark Roson featuring Bruno Mars) </a></li>
+  			<li><a href="https://www.youtube.com/watch?v=JGwWNGJdvx8" target="_blank""2">Shape of you (Ed Sheeran)</a></li>
+  			<li><a href="https://www.youtube.com/watch?v=aJOTlE1K90k" target="_blank""3">Girls Like You ( Marron 5 featuring VCardi B )</a></li>
+  			<li><a href="https://www.youtube.com/watch?v=ZbZSe6N_BXs" target="_blank""4">Happy ( Pharrel Williams )</a></li>
+  			<li><a href="https://www.youtube.com/watch?v=RgKAFK5djSk" target="_blank""5">See you again ( Wiz Khalifa featuring Charlie Puth )</a></li>
+  			<li><a href="https://www.youtube.com/watch?v=YQHsXMglC9A" target="_blank""6">Hello ( Adele )</a></li>
+  			<li><a href="https://www.youtube.com/watch?v=YqeW9_5kURI" target="_blank""7">Lean on (Major Lazer & DJ Snake featuring MO )</a></li>
+  			<li><a href="https://www.youtube.com/watch?v=fRh_vgS2dFE" target="_blank""8">Sorry ( Justin Bieber )</a></li>
+  			<li><a href="https://www.youtube.com/watch?v=3AtDnEC4zak" target="_blank""9">We don't talk anymore ( Charlie Puth )</a></li>
+  			<li><a href="https://www.youtube.com/watch?v=60ItHLz5WEA" target="_blank""10">Faded ( Alan Walker )</a></li>
+  		</ul>
+  		<br>
+  		<br>
+  	</div>
+  	<div class="row">
+	<div class="column">
+	<img src="https://enmota.com/wp-content/uploads/2018/03/hoc-tieng-anh-qua-bai-hat-uptown-funk-bruno-mars.jpg" alt="Uptown Funk" style="width:100%" onclick="myFunction(this);">
+	</div>
+	<div class="column">
+	<img src="https://product.hstatic.net/1000304920/product/cd_single_ed_sheeran_shape_of_you_2_track_975741647eb644969658aba9a8d594b3.jpg" alt="Shape of you" style="width:100%" onclick="myFunction(this);">
+	</div>
+	<div class="column">
+	<img src="https://i1.sndcdn.com/artworks-000386942226-i4u2y9-t500x500.jpg" alt="Girls Like You" style="width:100%" onclick="myFunction(this);">
+	</div>
+	<div class="column">
+	<img src="https://m.media-amazon.com/images/I/71XV4iaETAL._SS500_.jpg" alt="Happy" style="width:100%" onclick="myFunction(this);">
+	</div>
+	<div class="column">
+	<img src="https://i.ytimg.com/vi/eF51Xr5JUNw/maxresdefault.jpg" alt="See you again" style="width:100%" onclick="myFunction(this);">
+	</div>
+	<div class="column">
+	<img src="https://img.discogs.com/7_ZlK7KKWtowIJGGNLKZNttHLtI=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8111556-1455364761-7297.jpeg.jpg" alt="Hello" style="width:100%" onclick="myFunction(this);">
+	</div>
+	<div class="column">
+	<img src="https://upload.wikimedia.org/wikipedia/vi/6/66/Major_Lazer_and_DJ_Snake_-_Lean_On_%28feat._M%C3%98%29.jpg" alt="Lean on" style="width:100%" onclick="myFunction(this);">
+	</div>
+	<div class="column">
+	<img src="https://upload.wikimedia.org/wikipedia/vi/8/8f/Sorry_Justin_Bieber_Cover.jpg" alt="Sorry" style="width:100%" onclick="myFunction(this);">
+	</div>
+	<div class="column">
+	<img src="https://4.bp.blogspot.com/-NOxmN3FrBLA/XLy6xX2SdEI/AAAAAAAABaw/I_rnwUj2hGsiZd-he5LIiv6K29NFTZOiACLcBGAs/s1600/MV5BOWQyYmJiOWUtNzkzYS00YWJlLWI5YjgtYTg4MjI0MmM1N2ZkXkEyXkFqcGdeQXVyNjE0ODc0MDc%2540._V1_.jpg" alt="We don't talk any more" style="width:100%" onclick="myFunction(this);">
+	</div>
+	<div class="column">
+	<img src="https://i.pinimg.com/originals/f4/e1/06/f4e1064f2f2f06e9c5f71fef985a2281.jpg" alt="Faded" style="width:100%" onclick="myFunction(this);">
+	</div>
+	</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+  </body>
+  <footer class="page-footer font-small blue pt-4">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <p>This is a blog about music</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">About me</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!" class="fab fa-facebook-square">Facebook</a>
+          </li>
+          <li>
+            <a href="#!" class="fab fa-instagram-square">Instargram</a>
+          </li>
+          <li>
+            <a href="#!" class="fab fa-twitter-square">Twitter</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">More information</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="#"> MyMusicBlog</a>
+  </div>
+</footer>
+
+</html>
